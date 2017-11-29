@@ -1,0 +1,16 @@
+#安装
+pip3 install virtualenv
+
+#指定python版本创建虚拟环境,会生成虚拟环境目录
+virtualenv -p /usr/bin/python3 /opt/envpy3
+
+#进入目录，并激活虚拟环境
+cd /opt/envpy3
+source bin/activate
+
+pip freeze  #显示所有依赖
+pip freeze > requirement.txt  #生成requirement.txt文件
+pip install -r requirement.txt  #根据requirement.txt生成相同的环境
+
+#关闭虚拟环境
+deactivate

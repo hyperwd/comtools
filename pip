@@ -1,0 +1,12 @@
+#安装pip
+https://pip.pypa.io/en/stable/installing/
+#ubuntu
+apt install python3-pip
+
+#批量更新pip软件包
+#python3
+#查询哪些软件包需要更新
+pip3 list --outdated
+
+#python 多进程
+pip3_update_many.py
