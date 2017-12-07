@@ -1,0 +1,56 @@
+-------文件读写-----
+open(name[.mode][.buffering])
+
+'r' 读模式
+'w' 写模式
+'a' 追加模式
+'b' 二进制模式，可添加到其他模式中使用
+一用不到'b'，处理二进制文件使用，如mp3，图像等'rb'读取一个二进制文件
+'+' 读/写模式，可添加到其他模式中使用
+
+with open(r'/tmp/aaa.txt','r') as filereader:
+    print(filereader.read())
+
+r'/tmp/aaa.txt',r作用是告诉编译器这个string是个raw string，不要转意，如/n,等
+当一个字符串使用了正则表达式后，最好在前面加上'r'。
+
+.read()一次将文件内容读到内存，如果文件过大，会出现内存不足
+一般对于大文件，可以反复调用read(size)方法，一次最多读取size个字节。如果文件是
+文本文件，调用read()可以每次读取一行内容，调用readlines()，一次读取所有内容并按
+行返回列表
+
+with open(r'/tmp/dd.txt','w') as filewriyer:
+    filewriter.write('dd')
+
+.write() 写入字符串
+.writelines()写入一个序列，列表等
+
+---------操作文件和目录------
+os和shutil模块常用
+
+获取当前python脚本工作的目录os.getcwd()
+返回所有文件和目录名 os.listdir()
+删除一个文件 os.remove(filepath)
+删除多个空目录os.removedirs(r'filepath')
+路径是否是个文件os.path.isfile(filepath)
+路径是否是个目录os.path.isdir(filepath)
+是否是绝对路径os.path.isabs()
+路径是否存在os.path.exists()
+分离一个路径的目录名和文件名os.path.split()，返回结果为元组
+分离扩展名os.path.splitext(),返回结果为元组
+获取路径名os.path.dirname(filepath)
+获取文件名os.path.basename(filepath)
+读取和设置环境变量os.getenv(),os.putenv()
+给出当前系统平台使用的行终止符os.linesep
+指示你正在使用的平台系统os.name  windows-->'nt',linux---->'posix'
+重命名文件或目录os.rename(old,new)
+创建多级目录os.makedirs(r'/tmp/dwc/text.txt')
+创建单个目录 os.makedir(r'filepath')
+获取文件属性os.stat(file)
+修改文件权限与时间戳os.chmod(file)
+获取文件大小os.path.getsize(filename)
+复制文件夹shutil.copytree('olddir','newdir')
+复制文件 shutil.copyfile('oldfile','newfile'),  shutil.copy('oldfile','new')
+移动文件或目录 shutil.move('oldpos','newops')
+删除目录 os.rmdir('dir') 只能删除空目录，shutil.rmtree('dir'),空目录，非空目录
+都能删除
