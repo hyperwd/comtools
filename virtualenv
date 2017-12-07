@@ -1,4 +1,4 @@
-#安装
+#安装start
 pip3 install virtualenv
 
 #指定python版本创建虚拟环境,会生成虚拟环境目录
