@@ -7,6 +7,5 @@ apt install python3-pip
 #python3
 #查询哪些软件包需要更新
 pip3 list --outdated
-
-#python 多进程
+#python 更新所有旧pip包
 pip3_update_many.py
