@@ -2,6 +2,8 @@
 配置全局变量
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
+配置使用http协议是自动保存账号密码
+$ git config --global credential.helper store 
 
 配置ssh-key
 ssh-keygen -t rsa -C "用户名" 
