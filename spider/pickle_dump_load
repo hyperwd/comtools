@@ -6,15 +6,65 @@
 
 dumps方法 将任意对象序列化成一个str,然后在操作将这个str写入文件进学保存
 dump方法 将序列化后的对象直接写入文件中
+with open(r'/tmp/ddd.txt','wb') as f:
+    pickle.dump(idict,f)
 
 通过反序列化，存储为文件的的idict对象，又重新回复出来，但是这个变量与原来的变量
 没有任何关系，只是内容一样
 
 loads 将序列化后的文件，读取为一个str，然后使用loads方法将这个str反序列化为对象
 load 直接使用load方法将文件直接反序列化为对象
+with open(r'/tmp/ddd.txt','rb') as f:
+    idict = pickle.load(f)
 
 不同编程语言间传递对象，把对象序列化为标准格式是关键，例如XML，但是现在更流行
 json格式，既可以被所有编程语言读取解析，也可以方便的存储但磁盘或者通过网络传输
 
 ----json---
 
+python对json文件的操作分为编码和解码，通过JSON模块来实现
+
+编码过程是把python对象转换成JSON对象的过程
+dumps,dump
+解码过程是把json对象转换成python对象的过程
+load,loads
+
+dump把python对象转换成json对象，并将json对象通过fp文件流写入文件
+dumps则是转换成json对象后，生成了字符串
+
+import json
+json_str = json.dumps(idict,ensure_ascii=False)
+
+with open(r'/tmp/dd.txt','w') as f:
+    json.dump(idict,fp=f,ensure_ascii=False)
+
+loads是将json对象解码成字符串
+load是将文件中json内容直接解码成python对象
+
+new_str = json.loads(json_str)
+with open(r'/tmp/dd.txt','r') as f:
+    json.load(f)
+
+python的tuple编码成json变成了list，解码回来依然是list
+
+python  json
+dict    object
+list,tuple  array
+str,unicode string
+int,long,float  number
+True    true
+False   false
+None    null
+
+
+json    python
+object  dict
+array   list
+string  unicode
+number(int) int,long
+number(real)    float
+true    True
+false   False
+null    None
+
+python3 str-->str
