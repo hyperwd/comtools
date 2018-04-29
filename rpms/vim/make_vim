@@ -19,3 +19,5 @@ ln -s ....
 
 
 rpm包封装
+wget https://raw.githubusercontent.com/hyperwd/comtools/master/rpms/vim/vim-8.0-1768.el7.x86_64.rpm
+rpm -ivh vim**
