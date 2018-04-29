@@ -1,6 +1,9 @@
 centos7.4
 1、安装python3
 
+
+编译
+
 yum install -y gcc gcc-c++ zlib-devel
 cd /usr/local/src
 wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
@@ -9,4 +12,6 @@ cd /usr/local/src/Python-3.6.5
 ./configure --prefix=/usr/local/python365 --enable-optimizations
 make -jn(cpu 个数) && make install
 
+yum
 
+yum install python36
