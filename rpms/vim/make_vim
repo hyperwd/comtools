@@ -1,3 +1,21 @@
 centos7.4
 1、安装python3
+可编译 可rpm包
+wget https://raw.githubusercontent.com/hyperwd/comtools/master/rpms/python3/python-3.6.5-530.el7.x86_64.rpm
+rpm -ivh python-3.6.5-530.el7.x86_64.rpm
 
+2.编译vim
+yum install git gcc gcc-c++ ncurses-devel
+
+
+cd /usr/local/src
+git clone https://github.com/vim/vim.git
+cd vim
+./configure --with-features=huge --enable-python3interp --enable-multibyte --prefix=/usr/local/vim
+make -j n(内核数)
+make install
+ln -s ....
+
+
+
+rpm包封装
