@@ -12,7 +12,7 @@ fpm 打包
 https://www.cnblogs.com/Roach57/p/5130283.html
 
 
-fpm -s dir -t rpm -n python -v 3.6.5 --iteration 530.el7 -C /usr/local/python365/ -p /tmp/ --prefix /usr/local/python365 --description 'python3.6.5_rpm' --url 'https://www.python.org/' --after-install /usr/local/ins_after.sh --before-install /usr/local/ins_before.sh --after-remove /usr/local/rem_after.sh --license 'BSD' --verbose --category 'Application/File' -m 'hyperwd' --vendor 'hyperwd@bjshangyun.com' -d 'gcc,gcc-c++,zlib-devel' -f
+fpm -s dir -t rpm -n python -v 3.6.5 --iteration 530.el7 -C /usr/local/python365/ -p /tmp/ --prefix /usr/local/python365 --description 'python3.6.5_rpm' --url 'https://www.python.org/' --after-install /usr/local/ins_after.sh --before-install /usr/local/ins_before.sh --after-remove /usr/local/rem_after.sh --license 'BSD' --verbose --category 'Application/File' -m 'hyperwd' --vendor 'hyperwd@bjshangyun.com' -d 'gcc,gcc-c++,zlib,zlib-devel,openssl,openssl-devel' -f
 
 
 fpm -s dir -t rpm -n vim -v 8.0 --iteration 1768.el7 -C /usr/local/vim/ -p /tmp/ --prefix /usr/local/vim --description 'vim_python_3.6.5_rpm' --url 'https://www.vim.org/' --after-install /usr/local/ins_after.sh --before-install /usr/local/ins_before.sh --after-remove /usr/local/rem_after.sh --license 'BSD' --verbose --category 'Application/File' -m 'hyperwd' --vendor 'hyperwd@bjshangyun.com' -d 'gcc,gcc-c++,ncurses-devel' -f

@@ -4,12 +4,12 @@ centos7.4
 
 编译
 
-yum install -y gcc gcc-c++ zlib-devel
+yum install -y gcc gcc-c++ zlib zlib-devel openssl openssl-devel
 cd /usr/local/src
 wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
 tar xvf Python-3.6.5.tgz
 cd /usr/local/src/Python-3.6.5
-./configure --prefix=/usr/local/python365 --enable-optimizations
+./configure --prefix=/usr/local/python365 --enable-optimizations --with-ssl
 make -jn(cpu 个数) && make install
 ln -s ...
 
